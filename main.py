@@ -8,7 +8,7 @@ NUMBER = "+91 ***** *****"
 
 while(True):
 
-    with open("info","r") as f:
+    with open("info.json","r") as f:
         if len(f.read())!=0:
             f.seek(0)
             old_data_dict = json.load(f)
@@ -17,7 +17,7 @@ while(True):
     if old_data_dict is None:#first time load
         new_data_dict = json.loads(get_data(NUMBER))
         profile_obj_old = Profile(**new_data_dict)
-        with open("info","w") as f:
+        with open("info.json","w") as f:
             f.write(json.dumps(profile_obj_old.get_json()))
         continue
         
@@ -33,7 +33,7 @@ while(True):
             old_orders.append(order_dict)
     profile_obj_old.random_orders = old_orders
 
-    with open("info","w") as f:
+    with open("info.json","w") as f:
         f.write(json.dumps(profile_obj_old.get_json(),indent=4))
         print(profile_obj_old.total_num_orders- len(profile_obj_old.random_orders))
     
