@@ -1,6 +1,6 @@
 # dominos-data-extractor
 
-This command line extractor is basically a web scraper for getting info from the recent dominos india leak.
+This command line extractor is basically a web scraper for getting info from the recent dominos India leak.
 
 *Step 1 -> Run "pip install requirements" </br>
 *Step 2 -> Create a new file named "info.json"  in the directory along with main.py </br>
